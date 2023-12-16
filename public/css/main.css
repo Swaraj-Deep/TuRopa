@@ -1,0 +1,37 @@
+:root {
+  --headerHeight: 10rem;
+  --footerHeight: 10rem;
+}
+
+.header {
+  display: block;
+  height: var(--headerHeight);
+}
+
+.page {
+  height: calc(100% - (var(--headerHeight) + var(--footerHeight)));
+}
+
+.footer {
+  display: block;
+  height: var(--footerHeight);
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  height: 100%;
+  background-color: var(--color-bg-primary);
+  font-size: 1.6rem;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Noto Sans";
+  height: 100%;
+}
+
+h1 {
+  font-size: 3rem;
+}
