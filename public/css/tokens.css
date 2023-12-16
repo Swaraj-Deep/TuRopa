@@ -1,5 +1,13 @@
 :root {
   --color-bg-primary: #fff;
   --color-bg-secondary: #000;
-  --color-bg-accent: blue
+  --color-bg-accent: blue;
+  --space-padding-xs: 0.8rem;
+  --space-padding-sm: 1.6rem;
+  --space-padding-md: 2.4rem;
+  --space-padding-lg: 3.2rem;
+  --space-margin-xs: 0.8rem;
+  --space-margin-sm: 1.6rem;
+  --space-margin-md: 2.4rem;
+  --space-margin-lg: 3.2rem;
 }

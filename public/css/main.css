@@ -10,6 +10,7 @@
 
 .page {
   height: calc(100% - (var(--headerHeight) + var(--footerHeight)));
+  padding: 0 var(--space-padding-md);
 }
 
 .footer {
@@ -28,7 +29,7 @@ body {
 
 html {
   font-size: 62.5%;
-  font-family: "Noto Sans";
+  font-family: 'Noto Sans';
   height: 100%;
 }
 

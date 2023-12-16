@@ -1,0 +1,19 @@
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-baseline {
+  align-items: baseline;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.z-max {
+  z-index: 99999;
+}
