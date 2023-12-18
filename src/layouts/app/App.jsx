@@ -1,5 +1,9 @@
+// Components
+import ClothesGrid from '@components/templates/clothesGrid';
+
 function App() {
-  return <div>App</div>;
+  // Need routing here
+  return <ClothesGrid />;
 }
 
 export default App;

@@ -2,7 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#fff" />
     <meta name="description" content="Find your clothes here" />
     <title>Tu Ropa</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -11,15 +12,24 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300;0,500;0,700;1,100&display=swap"
       rel="stylesheet"
     />
+
+    <link rel="preload" href="../js/appFooter/AppFooter.js" as="script" />
+    <link rel="preload" href="../js/appHeader/AppHeader.js" as="script" />
+    <link rel="preload" href="../css/tokens.css" as="style" />
+    <link rel="preload" href="../css/main.css" as="style" />
+    <link rel="preload" href="../css/globals.css" as="style" />
+
     <script src="../js/appFooter/AppFooter.js"></script>
     <script src="../js/appHeader/AppHeader.js"></script>
+
     <link rel="stylesheet" href="../css/tokens.css" />
     <link rel="stylesheet" href="../css/main.css" />
     <link rel="stylesheet" href="../css/globals.css" />
   </head>
   <body>
-    <app-header name="Random" class="header"></app-header>
+    <app-header name="Random"></app-header>
     <div id="appContainer" class="page"></div>
-    <app-footer class="footer"></app-footer>
+    <div aria-hidden="true" id="portal"></div>
+    <app-footer></app-footer>
   </body>
 </html>

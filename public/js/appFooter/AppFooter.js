@@ -1,10 +1,16 @@
 const footer = document.createElement('footer');
-const footerStyleSheet = document.createElement('link');
-
-footerStyleSheet.setAttribute('rel', 'stylesheet');
-footerStyleSheet.setAttribute('href', './js/appFooter/appFooter.css');
 
 footer.innerHTML = `
+  <style>
+    footer {
+      height: var(--footerHeight);
+    }
+
+    :host(app-footer) {
+      display: block;
+      height: var(--footerHeight);
+    }
+  </style>
   footer
 `;
 
@@ -16,7 +22,6 @@ class AppFooter extends HTMLElement {
   connectedCallback() {
     const rootContainer = this.attachShadow({ mode: 'closed' });
     rootContainer.appendChild(footer);
-    rootContainer.appendChild(footerStyleSheet);
   }
 }
 

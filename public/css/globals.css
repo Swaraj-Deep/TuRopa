@@ -14,6 +14,125 @@
   justify-content: space-between;
 }
 
+.justify-center {
+  justify-content: center;
+}
+
 .z-max {
   z-index: 99999;
+}
+
+.gap-xxs {
+  gap: var(--space-gap-xxs);
+}
+
+.gap-xs {
+  gap: var(--space-gap-xs);
+}
+
+.gap-sm {
+  gap: var(--space-gap-sm);
+}
+
+.gap-md {
+  gap: var(--space-gap-md);
+}
+
+.gap-lg {
+  gap: var(--space-gap-lg);
+}
+
+.strike-through {
+  text-decoration: line-through;
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: break-word;
+}
+
+.object-cover {
+  object-fit: cover;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.mt-xxs {
+  margin-top: var(--space-margin-xxs);
+}
+
+.mt-xs {
+  margin-top: var(--space-margin-xs);
+}
+
+.mt-sm {
+  margin-top: var(--space-margin-sm);
+}
+
+.m-auto {
+  margin: auto;
+}
+
+.top-zero {
+  top: 0;
+}
+
+.bottom-zero {
+  bottom: 0;
+}
+
+.left-zero {
+  left: 0;
+}
+
+.right-zero {
+  right: 0;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.cursor-not-allowed {
+  cursor: not-allowed;
+}
+
+.p-relative {
+  position: relative;
+}
+
+.p-absolute {
+  position: absolute;
+}
+
+.p-fixed {
+  position: fixed;
+}
+
+.aspect-ratio {
+  aspect-ratio: 16 / 9;
+}
+
+.grid {
+  display: grid;
+}
+
+.block {
+  display: block;
 }

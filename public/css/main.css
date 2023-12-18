@@ -1,27 +1,25 @@
 :root {
-  --headerHeight: 10rem;
+  --headerHeight: 9.8rem;
   --footerHeight: 10rem;
 }
 
-.header {
-  display: block;
-  height: var(--headerHeight);
-}
-
 .page {
-  height: calc(100% - (var(--headerHeight) + var(--footerHeight)));
-  padding: 0 var(--space-padding-md);
+  min-height: calc(100% - (var(--headerHeight) + var(--footerHeight)));
+  padding: var(--space-padding-xxs) var(--space-padding-lg);
 }
 
-.footer {
-  display: block;
-  height: var(--footerHeight);
-}
-
-body {
+body,
+::after,
+::before,
+*,
+*::after,
+*::before {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+body {
   height: 100%;
   background-color: var(--color-bg-primary);
   font-size: 1.6rem;
@@ -29,10 +27,6 @@ body {
 
 html {
   font-size: 62.5%;
-  font-family: 'Noto Sans';
+  font-family: var(--typography-font-primary);
   height: 100%;
-}
-
-h1 {
-  font-size: 3rem;
 }
