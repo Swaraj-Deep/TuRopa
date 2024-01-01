@@ -24,10 +24,12 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].bundle.js',
+    publicPath: '/',
   },
   devServer: {
     port: process.env.PORT,
     hot: true,
+    historyApiFallback: true,
   },
   resolve: {
     alias: {
@@ -35,6 +37,9 @@ module.exports = {
       '@layouts': path.resolve(__dirname, 'src/layouts'),
       '@utils': path.resolve(__dirname, 'src/utils'),
       '@constants': path.resolve(__dirname, 'src/constants'),
+      '@pages': path.resolve(__dirname, 'src/pages'),
+      '@hooks': path.resolve(__dirname, 'src/hooks'),
+      '@services': path.resolve(__dirname, 'src/services'),
     },
     extensions: ['.js', '.jsx'],
   },

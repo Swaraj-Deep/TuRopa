@@ -1,0 +1,9 @@
+.indicator {
+  height: 0.3rem;
+  width: 2rem;
+  background-color: var(--color-bg-disabled);
+}
+
+.activeIndicator {
+  width: 4rem;
+}

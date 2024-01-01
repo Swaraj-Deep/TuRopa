@@ -1,0 +1,47 @@
+.clothCardShimmer {
+  width: auto;
+  border: var(--card-container-border-width) solid
+    var(--card-container-border-color);
+}
+
+.cardShimmerContent {
+  padding: var(--space-padding-xs);
+}
+
+.image {
+  height: 25.8rem;
+  background-color: lightgray;
+}
+
+.footer {
+  height: 2.7rem;
+  background-color: lightgray;
+}
+
+.rating {
+  height: 2.2rem;
+  background-color: lightgray;
+}
+
+.title {
+  height: 2.2rem;
+  background-color: lightgray;
+}
+
+.description {
+  height: 1.9rem;
+  background-color: lightgray;
+}
+
+.shimmer {
+  background: linear-gradient(-45deg, #eee 40%, #fafafa 50%, #eee 60%);
+  background-size: 300%;
+  background-position-x: 100%;
+  animation: shimmer 1s infinite linear;
+}
+
+@keyframes shimmer {
+  to {
+    background-position-x: 0%;
+  }
+}

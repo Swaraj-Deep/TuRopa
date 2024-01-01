@@ -2,6 +2,13 @@
   --color-bg-primary: #fff;
   --color-bg-secondary: #000;
   --color-bg-accent: blue;
+  --color-bg-button-primary: #42a5f5;
+  --color-bg-button-secondary: #000;
+  --color-bg-button-tertiary: #fff;
+  --color-on-button-primary: #000;
+  --color-on-button-secondary: #fff;
+  --color-on-button-tertiary: #fff;
+  --color-bg-disabled: #595959;
   --space-padding-xxs: 0.4rem;
   --space-padding-xs: 0.8rem;
   --space-padding-sm: 1.6rem;

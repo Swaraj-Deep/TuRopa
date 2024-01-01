@@ -13,23 +13,127 @@
       rel="stylesheet"
     />
 
-    <link rel="preload" href="../js/appFooter/AppFooter.js" as="script" />
-    <link rel="preload" href="../js/appHeader/AppHeader.js" as="script" />
-    <link rel="preload" href="../css/tokens.css" as="style" />
-    <link rel="preload" href="../css/main.css" as="style" />
-    <link rel="preload" href="../css/globals.css" as="style" />
+    <link rel="preload" href="/css/tokens.css" as="style" />
+    <link rel="preload" href="/css/globals.css" as="style" />
+    <link rel="preload" href="/css/main.css" as="style" />
 
-    <script src="../js/appFooter/AppFooter.js"></script>
-    <script src="../js/appHeader/AppHeader.js"></script>
+    <link rel="stylesheet" href="/css/tokens.css" />
+    <link rel="stylesheet" href="/css/globals.css" />
+    <link rel="stylesheet" href="/css/main.css" />
 
-    <link rel="stylesheet" href="../css/tokens.css" />
-    <link rel="stylesheet" href="../css/main.css" />
-    <link rel="stylesheet" href="../css/globals.css" />
+    <script>
+      const header = document.createElement('header');
+
+      header.innerHTML = `
+  <style>
+    header {
+      padding: var(--space-padding-sm) var(--space-padding-md);
+      width: calc(100% - (2 * var(--space-padding-md)));
+      background: var(--color-bg-primary);
+      height: calc(var(--headerHeight) - 2 * var(--space-padding-sm));
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 9999999;
+      top: 0;
+      position: fixed;
+    }
+
+    h3 {
+      margin: 0;
+      padding: 0;
+      display: inline-block;
+      font-size: var(--typography-size-h3);
+      font-weight: var(--typography-weight-h3);
+      letter-spacing: var(--typography-letter-space-h3);
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    li a {
+      padding: 0 var(--space-padding-sm);
+      margin: 0 var(--space-padding-sm);
+      max-width: 7rem;
+      cursor: pointer;
+    }
+
+    :host(app-header) {
+      display: block;
+      height: var(--headerHeight);
+    }
+  </style>
+  <h3>Tu Ropa</h3>
+  <ul>
+    <li>
+      <a>Cart</a>
+    </li>
+    <li>
+      <a>Login</a>
+    </li>
+  </ul>
+`;
+
+      class AppHeader extends HTMLElement {
+        constructor() {
+          super();
+        }
+
+        connectedCallback() {
+          const rootContainer = this.attachShadow({ mode: 'closed' });
+          rootContainer.appendChild(header);
+        }
+      }
+
+      customElements.define('app-header', AppHeader);
+    </script>
+
+    <script>
+      const footer = document.createElement('footer');
+
+      footer.innerHTML = `
+  <style>
+    footer {
+      height: var(--footerHeight);
+    }
+
+    :host(app-footer) {
+      display: block;
+      height: var(--footerHeight);
+    }
+  </style>
+  footer
+`;
+
+      class AppFooter extends HTMLElement {
+        constructor() {
+          super();
+        }
+
+        connectedCallback() {
+          const rootContainer = this.attachShadow({ mode: 'closed' });
+          rootContainer.appendChild(footer);
+        }
+      }
+
+      customElements.define('app-footer', AppFooter);
+    </script>
   </head>
   <body>
     <app-header name="Random"></app-header>
     <div id="appContainer" class="page"></div>
     <div aria-hidden="true" id="portal"></div>
     <app-footer></app-footer>
+    <div>
+      Personal Project using
+      <a href="https://dummyjson.com" target="_blank" rel="noopener noreferrer"
+        >dummyJson</a
+      >
+      apis. This will be the footer
+    </div>
   </body>
 </html>

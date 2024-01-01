@@ -1,0 +1,21 @@
+.button {
+  padding: 1rem;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+.primary {
+  background-color: var(--color-bg-button-primary);
+  color: var(--color-on-button-primary);
+}
+
+.secondary {
+  background-color: var(--color-bg-button-secondary);
+  color: var(--color-on-button-secondary);
+}
+
+.tertiary {
+  background-color: var(--color-bg-button-tertiary);
+  color: var(--color-on-button-tertiary);
+}

@@ -3,29 +3,22 @@ import PropTypes from 'prop-types';
 // Constants
 import { EMPTY_OBJECT } from '@constants/defaults';
 
+// Utils
+import { getDiscountedPrice } from '@utils/price';
+
 // Components
-import Typography, {
-  VARIANTS as TYPOGRAPHY_VARIANTS,
-  COLORS as TYPOGRAPHY_COLORS,
-} from '@components/atoms/typography';
 import Price from '@components/atoms/price';
+import Discount from '@components/atoms/discount';
 
 function ClothCardFooter(props) {
   const { cloth } = props;
   const { price, discountPercentage } = cloth;
-  const discount = (discountPercentage / 100) * price;
-  const discountedPrice =
-    Math.round((price - discount + Number.EPSILON) * 100) / 100;
+  const discountedPrice = getDiscountedPrice(discountPercentage, price);
   return (
     <div className="flex gap-xxs items-baseline mt-sm">
       <Price price={discountedPrice} />
       <Price price={price} isOld />
-      <Typography
-        variant={TYPOGRAPHY_VARIANTS.caption}
-        color={TYPOGRAPHY_COLORS.success}
-      >
-        {discountPercentage}% Off
-      </Typography>
+      <Discount discountPercentage={discountPercentage} />
     </div>
   );
 }

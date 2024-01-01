@@ -1,0 +1,20 @@
+.carousel {
+  height: 45rem;
+  width: 45rem;
+}
+
+.indicator {
+  height: 0.3rem;
+  width: 2rem;
+  background-color: var(--color-bg-disabled);
+}
+
+.activeIndicator {
+  height: 0.3rem;
+  width: 4rem;
+}
+
+.indicators {
+  width: 45rem;
+  padding: var(--space-padding-xs) 0;
+}

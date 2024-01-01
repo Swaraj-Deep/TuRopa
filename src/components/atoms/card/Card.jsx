@@ -10,10 +10,21 @@ import Image from '@components/atoms/image';
 import styles from './card.module.css';
 
 function Card(props) {
-  const { imageUrl, renderBody, renderFooter, mediaClassName, className } =
-    props;
+  const {
+    imageUrl,
+    renderBody,
+    renderFooter,
+    mediaClassName,
+    className,
+    onClick,
+  } = props;
   return (
-    <div className={`cursor-pointer ${styles.card} ${className}`}>
+    <div
+      className={`cursor-pointer ${styles.card} ${className}`}
+      onClick={onClick}
+      tabIndex={0}
+      role="button"
+    >
       <Image
         src={imageUrl}
         className={`p-relative ${styles.imageContainer}`}
@@ -34,6 +45,7 @@ Card.propTypes = {
   renderFooter: PropTypes.func,
   className: PropTypes.string,
   mediaClassName: PropTypes.string,
+  onClick: PropTypes.func,
 };
 
 Card.defaultProps = {
@@ -42,6 +54,7 @@ Card.defaultProps = {
   renderFooter: EMPTY_FUNCTION,
   className: '',
   mediaClassName: '',
+  onClick: EMPTY_FUNCTION,
 };
 
 export default React.memo(Card);

@@ -1,52 +1,30 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useMemo } from 'react';
 
 // Constants
 import { EMPTY_ARRAY } from '@constants/defaults';
 
-// Utils
-import http from '@utils/http';
-
-const onSuccess =
-  (setClothes) =>
-  ({ products }) => {
-    setClothes(products);
-  };
-
-const onError = (abortController) => (err) => {
-  if (!abortController.signal.aborted) {
-    console.error(err);
-  }
-};
-
-const onSetteled = (setIsLoading) => () => {
-  setIsLoading(false);
-};
-
-function fetchClothes(setClothes, setIsLoading) {
-  setIsLoading(true);
-  const abortController = new AbortController();
-  const promise = http.get(
-    'https://dummyjson.com/products/category/mens-shirts',
-    abortController
-  );
-  promise
-    .then(onSuccess(setClothes))
-    .catch(onError(abortController))
-    .finally(onSetteled(setIsLoading));
-
-  return () => abortController.abort();
-}
+// Hooks
+import useData from '@hooks/useData';
 
 function useProducts() {
-  const [clothes, setClothes] = useState(EMPTY_ARRAY);
-  const [isLoading, setIsLoading] = useState(false);
+  const searchUrl = 'https://dummyjson.com/products/category/mens-shirts';
 
-  useEffect(() => fetchClothes(setClothes, setIsLoading), []);
+  const { data, isLoading, error } = useData({
+    url: searchUrl,
+    initialValue: EMPTY_ARRAY,
+  });
 
-  const values = useMemo(() => ({
-    clothes,
-    isLoading,
-  }));
+  const { products = EMPTY_ARRAY } = data;
+
+  const values = useMemo(
+    () => ({
+      clothes: products,
+      isLoading,
+      error,
+    }),
+    [products, isLoading, error]
+  );
+
   return values;
 }
 

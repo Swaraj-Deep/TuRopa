@@ -22,9 +22,21 @@
   letter-spacing: var(--typography-letter-space-h4);
 }
 
+.h4Light {
+  font-size: var(--typography-size-h4);
+  font-weight: var(--typography-weight-body1Light);
+  letter-spacing: var(--typography-letter-space-h4);
+}
+
 .h5 {
   font-size: var(--typography-size-h5);
   font-weight: var(--typography-weight-h5);
+  letter-spacing: var(--typography-letter-space-h5);
+}
+
+.h5Light {
+  font-size: var(--typography-size-h5);
+  font-weight: var(--typography-weight-body2Light);
   letter-spacing: var(--typography-letter-space-h5);
 }
 

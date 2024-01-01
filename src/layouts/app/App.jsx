@@ -1,9 +1,16 @@
+import { Route, Routes } from 'react-router-dom';
+
 // Components
-import ClothesGrid from '@components/templates/clothesGrid';
+import Search from '@pages/search';
+import Details from '@pages/details';
 
 function App() {
-  // Need routing here
-  return <ClothesGrid />;
+  return (
+    <Routes>
+      <Route path="/" element={<Search />} />
+      <Route path="/details/:id" element={<Details />} />
+    </Routes>
+  );
 }
 
 export default App;
