@@ -1,5 +1,8 @@
 import PropTypes from 'prop-types';
 
+// Constants
+import ICONS from '@constants/icons';
+
 // Components
 import Typography, {
   VARIANTS as TYPOGRAPHY_VARIANTS,
@@ -11,7 +14,7 @@ function Rating(props) {
   return (
     <div className="flex items-baseline gap-xxs">
       <Typography variant={TYPOGRAPHY_VARIANTS.caption}>{rating}</Typography>
-      <Image src="/icons/star-solid.svg" />
+      <Image src={ICONS.STAR_SOLID} />
     </div>
   );
 }
