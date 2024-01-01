@@ -6,7 +6,3 @@
   grid-auto-rows: auto;
   grid-gap: var(--space-gap-sm);
 }
-
-.backdrop {
-  top: var(--headerHeight);
-}

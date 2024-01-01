@@ -1,17 +1,20 @@
 // Hooks
 import useProducts from './hooks/useProducts';
 
+// Utils
+import _times from '@utils/times';
+
+// Constants
+import { DEFAULT_LOADING_CARDS } from './clothesGrid.constants';
+
 // Components
 import Card from '@components/atoms/card';
-import Spinner from '@components/atoms/spinner';
-import Backdrop from '@components/atoms/backdrop';
 import ClothCardBody from './molecules/clothCardBody';
 import ClothCardFooter from './molecules/clothCardFooter';
+import ClothCardShimmer from './molecules/clothCardShimmer';
 
 // Styles
 import styles from './clothesGrid.module.css';
-
-// fakeapi.platzi.com/en/rest/products/
 
 function renderBody(cloth) {
   return <ClothCardBody cloth={cloth} />;
@@ -32,19 +35,16 @@ function renderCloth(cloth) {
   );
 }
 
+function renderShimmerLayout() {
+  return _times(DEFAULT_LOADING_CARDS, (i) => <ClothCardShimmer key={i} />);
+}
+
 function ClothesGrid() {
   const { clothes, isLoading } = useProducts();
-  if (isLoading) {
-    return (
-      <Backdrop className={styles.backdrop}>
-        <Spinner />
-      </Backdrop>
-    );
-  }
 
   return (
     <div className={`grid ${styles.clothesGrid}`}>
-      {clothes.map(renderCloth)}
+      {isLoading ? renderShimmerLayout() : clothes.map(renderCloth)}
     </div>
   );
 }
