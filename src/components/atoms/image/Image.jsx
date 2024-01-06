@@ -9,6 +9,7 @@ function Image(props) {
         alt={alt}
         className={imageClassName}
         fetchpriority={fetchpriority}
+        aria-hidden={true}
       />
     </div>
   );

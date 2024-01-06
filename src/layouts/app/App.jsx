@@ -1,18 +1,15 @@
-// Components
-{
-  /* <ClothesGrid />; */
-}
 import { Route, Routes } from 'react-router-dom';
+
+// Components
 import Search from '@pages/search';
+import Clothing from '@pages/clothing';
+
 function App() {
-  // Need routing here
   return (
-    <div>
-      <Routes>
-        <Route path="/" element={<Search />} />
-        <Route path="/about" element={<h1>About</h1>} />
-      </Routes>
-    </div>
+    <Routes>
+      <Route path="/" element={<Search />} />
+      <Route path="/clothing/:id" element={<Clothing />} />
+    </Routes>
   );
 }
 

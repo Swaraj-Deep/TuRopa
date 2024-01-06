@@ -18,8 +18,12 @@ const onError = (abortController) => (err) => {
   }
 };
 
-const onSetteled = (setIsLoading) => () => {
-  setIsLoading(false);
+const onSetteled = (setIsLoading, abortController) => () => {
+  if (abortController.signal.aborted) {
+    setIsLoading(true);
+  } else {
+    setIsLoading(false);
+  }
 };
 
 function fetchClothes(setClothes, setIsLoading) {
@@ -32,7 +36,7 @@ function fetchClothes(setClothes, setIsLoading) {
   promise
     .then(onSuccess(setClothes))
     .catch(onError(abortController))
-    .finally(onSetteled(setIsLoading));
+    .finally(onSetteled(setIsLoading, abortController));
 
   return () => abortController.abort();
 }
@@ -43,10 +47,13 @@ function useProducts() {
 
   useEffect(() => fetchClothes(setClothes, setIsLoading), []);
 
-  const values = useMemo(() => ({
-    clothes,
-    isLoading,
-  }));
+  const values = useMemo(
+    () => ({
+      clothes,
+      isLoading,
+    }),
+    [clothes, isLoading]
+  );
   return values;
 }
 

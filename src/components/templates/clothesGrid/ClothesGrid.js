@@ -1,3 +1,6 @@
+import { useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 // Hooks
 import useProducts from './hooks/useProducts';
 
@@ -24,16 +27,18 @@ function renderFooter(cloth) {
   return <ClothCardFooter cloth={cloth} />;
 }
 
-function renderCloth(cloth) {
+const renderCloth = (onClothClick) => (cloth) => {
+  const onClick = () => onClothClick(cloth);
   return (
     <Card
       key={cloth.id}
       imageUrl={cloth.thumbnail}
       renderBody={() => renderBody(cloth)}
       renderFooter={() => renderFooter(cloth)}
+      onClick={onClick}
     />
   );
-}
+};
 
 function renderShimmerLayout() {
   return _times(DEFAULT_LOADING_CARDS, (i) => <ClothCardShimmer key={i} />);
@@ -41,10 +46,21 @@ function renderShimmerLayout() {
 
 function ClothesGrid() {
   const { clothes, isLoading } = useProducts();
+  const navigate = useNavigate();
+
+  const onClothClick = useCallback(
+    (cloth) => {
+      const { id } = cloth;
+      navigate(`clothing/${id}`, { state: { cloth } });
+    },
+    [navigate]
+  );
 
   return (
     <div className={`grid ${styles.clothesGrid}`}>
-      {isLoading ? renderShimmerLayout() : clothes.map(renderCloth)}
+      {isLoading
+        ? renderShimmerLayout()
+        : clothes.map(renderCloth(onClothClick))}
     </div>
   );
 }
