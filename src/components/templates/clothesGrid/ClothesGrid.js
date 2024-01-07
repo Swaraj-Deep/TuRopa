@@ -51,7 +51,7 @@ function ClothesGrid() {
   const onClothClick = useCallback(
     (cloth) => {
       const { id } = cloth;
-      navigate(`clothing/${id}`, { state: { cloth } });
+      navigate(`details/${id}`, { state: { cloth } });
     },
     [navigate]
   );

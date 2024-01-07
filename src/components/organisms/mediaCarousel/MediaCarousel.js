@@ -38,7 +38,7 @@ function MediaCarousel(props) {
     useMediaCarousel(maxMediaLength);
 
   return (
-    <div>
+    <div className={styles.mediaCarousel}>
       <div className={styles.carouselContainer}>
         {mediaCarouselConfigs.map(renderMedia(selectedImageIndex))}
       </div>

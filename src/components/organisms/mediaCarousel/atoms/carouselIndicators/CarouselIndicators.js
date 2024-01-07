@@ -25,7 +25,7 @@ function CarouselIndicators(props) {
   const { indicatorsCount, selectedIndicator, onIndicatorClick } = props;
 
   return (
-    <div className="flex items-center gap-xxs mt-xs">
+    <div className="flex items-center justify-center gap-xxs mt-xs">
       {_times(
         indicatorsCount,
         renderIndicator(selectedIndicator, onIndicatorClick)

@@ -1,7 +1,7 @@
 .indicator {
   height: 1rem;
   width: 2rem;
-  background-color: var(--color-bg-accent);
+  background-color: var(--color-bg-disabled);
 }
 
 .activeIndicator {

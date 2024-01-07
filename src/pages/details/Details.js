@@ -1,12 +1,12 @@
 import { useLocation } from 'react-router-dom';
 
 // Helpers
-import { makeMediaCarouselConfigs } from './clothing.helpers';
+import { makeMediaCarouselConfigs } from './details.helpers';
 
 // Components
 import MediaCarousel from '@components/organisms/mediaCarousel';
 
-function Clothing() {
+function Details() {
   const { state } = useLocation();
   const { cloth } = state || {};
   const { images } = cloth || {};
@@ -15,9 +15,10 @@ function Clothing() {
   return (
     <div>
       <MediaCarousel mediaCarouselConfigs={mediaCarouselConfigs} />
+      Delivery options NExt section buuing option
       {cloth.id}
     </div>
   );
 }
 
-export default Clothing;
+export default Details;
